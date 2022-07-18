@@ -1,13 +1,21 @@
 import { defineComponent, ref } from "vue";
+import { RouterLink, RouterView } from "vue-router";
 export const App = defineComponent(
     {
         setup(){
-          const count =ref(0);
-          const onClick = ()=>{count.value += 1}
           return ()=>
             <>
-            <div>{count.value}</div>
-            <button onClick={onClick}>+1</button>
+            <header>导航
+              <ul>
+                <li>
+                  <RouterLink to='/'>foo</RouterLink>
+                </li>
+                <li>
+                  <RouterLink to='/bar'>bar</RouterLink>
+                </li>
+              </ul>
+            </header>
+            <RouterView/>
             </> 
         }
     }
