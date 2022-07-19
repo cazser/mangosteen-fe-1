@@ -18,10 +18,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 16px;
-        font-size: 32px;
-        padding: 24px 0;
+        font-size: 24px;
+        padding: 24px 16px;
+        width:100%;
+        background-color: var(--background-end);
         color: white;
+        position: fixed;
+        left:0;
+        bottom: 0;
     } 
 }
 .fake{
