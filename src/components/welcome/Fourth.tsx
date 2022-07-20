@@ -10,7 +10,7 @@ export const Fourth = defineComponent(
             <WelcomeLayout>
             {{
                 icon: ()=> <img class={s.pig} src={cloud} />,
-                title: ()=> <h2>每日提醒<br/>不遗漏每一笔账</h2>,
+                title: ()=> <h2>上传云端<br/>不会丢失</h2>,
                 buttons:()=> 
                 <div class={s.actions}>
                     <RouterLink class={s.fake} to="/start">跳过</RouterLink>

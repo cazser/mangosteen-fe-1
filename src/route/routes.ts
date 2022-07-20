@@ -4,7 +4,7 @@ import { Fourth } from '../components/welcome/Fourth'
 import { Second } from '../components/welcome/Second'
 import { Third } from '../components/welcome/Third'
 import { Bar } from '../views/Bar'
-import { Foo } from '../views/Foo'
+import { StartPage } from '../views/StartPage'
 import { Welcome } from '../views/Welcome'
 
 export const routes: RouteRecordRaw[]=[
@@ -17,5 +17,6 @@ export const routes: RouteRecordRaw[]=[
         {path:'2', component: Second},
         {path:'3', component: Third},
         {path:'4', component: Fourth},
-    ]}
+    ]},
+    {path:'/start', component: StartPage}
 ]
