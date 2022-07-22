@@ -1,0 +1,13 @@
+.button{
+    background: var(--float-button-bg);
+    border-radius: 50%;
+    border:  none;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left:16px;
+    bottom: 16px;
+    width:56px;
+    height:56px;
+}
