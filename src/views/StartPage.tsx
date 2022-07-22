@@ -8,8 +8,8 @@ export const StartPage = defineComponent(
             console.log("ho")
         }
             return ()=>
-            <div class={[s.buttonWrapper,s.button]}>    
-                <Button onClick={onClick}>测试</Button>
+            <div class={s.buttonWrapper}>    
+                <Button class={s.button} onClick={onClick}>测试</Button>
             
             </div>
         }
