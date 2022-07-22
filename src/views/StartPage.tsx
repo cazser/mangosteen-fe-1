@@ -3,10 +3,13 @@ import { Button } from "../shared/Button";
 import s from './StartPage.module.scss';
 export const StartPage = defineComponent(
     {
-    setup(){
+    setup(props, context){
+        const onClick = (e: Event)=>{
+            console.log("ho")
+        }
             return ()=>
             <div class={[s.buttonWrapper,s.button]}>    
-                <Button >测试</Button>
+                <Button onClick={onClick}>测试</Button>
             
             </div>
         }
