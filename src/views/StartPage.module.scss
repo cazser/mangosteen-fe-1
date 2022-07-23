@@ -6,3 +6,18 @@
     padding: 16px;
 }
 
+.center{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.pig{
+    width: 128px;
+    height: 128px;
+    &_wrapper{
+        padding-top: 160px;
+        padding-bottom: 160px;
+    }
+}
