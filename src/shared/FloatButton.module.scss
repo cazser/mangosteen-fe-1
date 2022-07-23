@@ -6,8 +6,11 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    left:16px;
+    right:16px;
     bottom: 16px;
     width:56px;
     height:56px;
+    >img{
+        max-width: 1.5em;
+    }
 }
