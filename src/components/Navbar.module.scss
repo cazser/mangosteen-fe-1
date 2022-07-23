@@ -1,0 +1,30 @@
+.nav{
+    img{
+        max-width:  1.2em;
+    }
+    display: flex;
+    justify-content: flex-start;
+     background-image: linear-gradient(to bottom, #5133de 0%, var(--background-end) 100%);
+     color: white;
+
+     padding: 12px 8px;
+}
+
+.title{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon_wrapper{
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    >*{
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
