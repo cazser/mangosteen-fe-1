@@ -1,7 +1,7 @@
 import { defineComponent, ref } from "vue";
 import s from './Button.module.scss';
 interface Props{
-    onClick :(e:Event)=>void
+    onClick?:(e:Event)=>void
 }
 export const Button = defineComponent<Props>(
     {
