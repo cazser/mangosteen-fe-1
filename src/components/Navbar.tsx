@@ -1,6 +1,9 @@
 import { defineComponent, ref } from "vue";
 import s from './Navbar.module.scss'
-export const Navbar = defineComponent(
+interface Props{
+    onClick? :(e:Event)=>void
+}
+export const Navbar = defineComponent<Props>(
     {
     setup(props, context){
             const {slots} = context;
