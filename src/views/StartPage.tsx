@@ -20,6 +20,9 @@ export const StartPage = defineComponent(
         }
             return ()=>
             <>
+            {
+               overlayVisible.value && <Overlay onClose={()=>overlayVisible.value = !overlayVisible.value}/>
+            }
             <nav>
                 <Navbar onClick={onClickMenu}>
                     {{default:'山竹记账', icon: <Icon src={menu}/>}}
@@ -32,9 +35,7 @@ export const StartPage = defineComponent(
                 <Button class={s.button} >测试</Button>
             <FloatButton/>
             </div>
-            {
-               overlayVisible.value && <Overlay />
-            }
+            
             </>
         }
     }
