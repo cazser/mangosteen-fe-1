@@ -12,6 +12,7 @@ export const Overlay = defineComponent(
             }
         },
     setup(props, context){
+        const onClickSignIn = () => { }
             const close=()=>{
                 props.onClose?.();
             };
@@ -21,12 +22,13 @@ export const Overlay = defineComponent(
 
                 </div>
                 <div class={s.overlay}>
-                    <section>
+                    <section class={s.currentUser} onClick={onClickSignIn}>
                         <h2>未登录用户</h2>
                         <div>点击这里登录</div>
                     </section>
+                    
                     <nav>
-                        <ul>
+                        <ul class={s.action_list}>
                             <li>
                                 <Icon src={chart}/>
                                 <span>统计图表</span>
