@@ -8,6 +8,7 @@ import { Icon } from "../shared/Icon";
 import { Navbar } from "../components/Navbar";
 import { Overlay } from "../components/Overlay";
 import { RouterLink } from "vue-router";
+import { MainLayout } from "../layout/MainLayout";
 export const StartPage = defineComponent(
 
     {
@@ -21,26 +22,35 @@ export const StartPage = defineComponent(
         }
             return ()=>
             <>
-            {
-               overlayVisible.value && <Overlay onClose={()=>overlayVisible.value = !overlayVisible.value}/>
-            }
-            <nav>
-                <Navbar onClick={onClickMenu}>
-                    {{default:'山竹记账', icon: <Icon src={menu}/>}}
-                </Navbar>
-            </nav>
-            <div class={[s.center, s.pig_wrapper]}>
-                <Icon src ={pig} class={s.pig}/>
-            </div>
-            <div class={s.buttonWrapper}> 
-                <RouterLink to="/items/create">   
-                <Button class={s.button} >开始记账</Button>
-                </RouterLink>
-                <RouterLink to="/items/create">
-                <FloatButton/>
-                </RouterLink>
-            </div>
-            
+            <MainLayout onNavBarClick={onClickMenu}>
+                 {
+                 {  
+                    title:()=>'山竹记账', 
+                    icon:()=> <Icon src={menu}/>,
+                    default: ()=>(
+                    <>
+                    {
+                          overlayVisible.value && 
+                          <Overlay onClose={()=>
+                            overlayVisible.value = !overlayVisible.value}/>
+                    }           
+                    <div class={[s.center, s.pig_wrapper]}>
+                        <Icon src ={pig} class={s.pig}/>
+                    </div>
+                    <div class={s.buttonWrapper}> 
+                        <RouterLink to="/items/create">   
+                            <Button class={s.button} >开始记账</Button>
+                        </RouterLink>
+                        <RouterLink to="/items/create">
+                            <FloatButton/>
+                        </RouterLink>
+                    </div>
+                    </>
+                    )
+                    }
+                 }
+            </MainLayout>
+           
             </>
         }
     }
