@@ -7,6 +7,7 @@ import menu from '../assets/icons/menu.svg'
 import { Icon } from "../shared/Icon";
 import { Navbar } from "../components/Navbar";
 import { Overlay } from "../components/Overlay";
+import { RouterLink } from "vue-router";
 export const StartPage = defineComponent(
 
     {
@@ -31,9 +32,13 @@ export const StartPage = defineComponent(
             <div class={[s.center, s.pig_wrapper]}>
                 <Icon src ={pig} class={s.pig}/>
             </div>
-            <div class={s.buttonWrapper}>    
-                <Button class={s.button} >测试</Button>
-            <FloatButton/>
+            <div class={s.buttonWrapper}> 
+                <RouterLink to="/items/create">   
+                <Button class={s.button} >开始记账</Button>
+                </RouterLink>
+                <RouterLink to="/items/create">
+                <FloatButton/>
+                </RouterLink>
             </div>
             
             </>
