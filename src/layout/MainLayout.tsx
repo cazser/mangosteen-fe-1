@@ -11,11 +11,11 @@ export const MainLayout = defineComponent(
             return ()=>
                 <>
                 <div>
-                <nav>
+                
                 <Navbar onClick={props.onNavBarClick}>
                     {{default: context.slots.title?.(), icon: context.slots.icon?.()}}
                 </Navbar>
-                </nav>
+                
                 {context.slots.default?.()}
                 
                 </div>

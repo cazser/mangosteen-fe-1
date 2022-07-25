@@ -3,6 +3,7 @@ import { MainLayout } from "../../layout/MainLayout";
 import s from './ItemCreate.module.scss'
 import left from '../../assets/icons/left.svg'
 import { Icon } from "../../shared/Icon";
+import { Tabs } from "../../shared/Tabs";
 export const ItemCreate = defineComponent(
     {
     setup(){
@@ -13,7 +14,12 @@ export const ItemCreate = defineComponent(
                         icon: ()=><Icon src={left} class={s.navIcon} />,
                         default:()=>(
                             <>
-                            <div>main</div>
+                            <Tabs>
+                            
+                            </Tabs>
+                            <div>
+                                111
+                            </div>
                             </>
                         )
                     }}
