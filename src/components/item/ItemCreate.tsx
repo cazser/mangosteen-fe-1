@@ -23,12 +23,10 @@ export const ItemCreate = defineComponent(
                                     {"Icon列表"}
                                 </Tab>
                                 <Tab name="收入">
-                                    {"Icon列表"}
+                                    {"Icon列表2"}
                                 </Tab>
                             </Tabs>
-                            <div>
-                                111
-                            </div>
+                            
                             </>
                         )
                     }}
