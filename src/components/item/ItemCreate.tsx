@@ -7,15 +7,24 @@ import { Tabs } from "../../shared/Tabs";
 export const ItemCreate = defineComponent(
     {
     setup(){
-            return ()=>
+        const refKind = ref("支出")
+        const onUpdateSelected=(name: string)=>{
+            refKind.value = name;
+        }    
+        return ()=>
                 <>
                 <MainLayout>
                       {{title:()=>'记一笔',
                         icon: ()=><Icon src={left} class={s.navIcon} />,
                         default:()=>(
                             <>
-                            <Tabs>
-                            
+                            <Tabs selected={refKind.value} onUpdateSelected={}>
+                                <Tab name="支出">
+                                    Icon列表
+                                </Tab>
+                                <Tab name="收入">
+                                    Icon列表
+                                </Tab>
                             </Tabs>
                             <div>
                                 111
