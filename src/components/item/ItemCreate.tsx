@@ -4,6 +4,7 @@ import s from './ItemCreate.module.scss'
 import left from '../../assets/icons/left.svg'
 import { Icon } from "../../shared/Icon";
 import { Tab, Tabs } from "../../shared/Tabs";
+import { InputPad } from "./InputPad";
 export const ItemCreate = defineComponent(
     {
     setup(){
@@ -24,9 +25,10 @@ export const ItemCreate = defineComponent(
                                 </Tab>
                                 <Tab name="收入">
                                     {"Icon列表2"}
+
                                 </Tab>
                             </Tabs>
-                            
+                            <InputPad />
                             </>
                         )
                     }}
