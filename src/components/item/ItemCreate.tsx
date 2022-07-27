@@ -28,7 +28,9 @@ export const ItemCreate = defineComponent(
 
                                 </Tab>
                             </Tabs>
+                            <div class={s.inputPad_wrapper}>
                             <InputPad />
+                            </div>
                             </>
                         )
                     }}
