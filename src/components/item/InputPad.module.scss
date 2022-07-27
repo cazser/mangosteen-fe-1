@@ -1,6 +1,7 @@
 .wrapper{
   img{
-    max-width: 1em;
+    max-width: 1.2em;
+    margin-right: 8px;
   }
 }
 
@@ -24,5 +25,25 @@
     &:nth-child(16){
       border-bottom: none;
     }
+  }
+}
+
+.dateAndAmount{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  font-family: monospace;
+  border-top: var(--button-border-color);
+  >.date{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 12px;
+    color: var(--date-text);
+  }
+  >.amount{
+    font-size: 20px;
+    color: var(--amount-text);
   }
 }
