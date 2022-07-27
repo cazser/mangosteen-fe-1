@@ -31,7 +31,7 @@ export const InputPad = defineComponent(
             <span>2022-01-01</span>
           <span class={s.amount}>数字</span>
         </div>
-        <div>
+        <div class={s.buttons}>
           {buttons.map((button)=><button onClick={button.onclick}>{button.text}</button>)}
         </div>
       </>
