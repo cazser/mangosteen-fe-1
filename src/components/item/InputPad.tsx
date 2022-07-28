@@ -2,6 +2,7 @@ import { defineComponent, ref } from "vue";
 import s from './InputPad.module.scss'
 import notes from '../../assets/icons/comment.svg';
 import { Icon } from "../../shared/Icon";
+import { time } from "../../shared/time";
 export const InputPad = defineComponent(
   {
   setup(props, context){
@@ -22,13 +23,15 @@ export const InputPad = defineComponent(
       {text:'0', onclick:()=>{}},
       {text:'删', onclick:()=>{}},
       {text:'提交', onclick:()=>{}},
-    ]
+    ];
+     const now = new Date()
       return ()=>
         <>
         <div class={[s.wrapper, s.dateAndAmount] }>
           <span class={s.date}>
-            <Icon src={notes}/>
-            <span>2022-01-01</span>
+             <span>
+            <input type="date" value={time(now).format()} />
+          </span>
           </span>
           <span class={s.amount}>199</span>
         </div>
