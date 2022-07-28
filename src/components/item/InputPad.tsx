@@ -29,6 +29,8 @@ export const InputPad = defineComponent(
     const now = new Date()
     const refDate = ref<Date>(now);
       const refShowPop = ref(false);
+      const hiddPopUp=()=>{refShowPop.value = false};
+      const setDate =(date:Date)=>{refDate.value = date; hiddPopUp();}
       return ()=>
         <>
         <div class={[s.wrapper, s.dateAndAmount] }>
@@ -36,9 +38,9 @@ export const InputPad = defineComponent(
              <span>
              <span onClick={() => refShowPop.value = true}>{time(refDate.value).format()}</span>
             <Popup position='bottom' v-model:show={refShowPop.value}>
-              <DatetimePicker v-model={refDate.value} type="date" title="选择年月日"
-                onConfirm={() => refShowPop.value = false} 
-                 onCancel={() => refShowPop.value = false} />
+              <DatetimePicker value={refDate.value} type="date" title="选择年月日"
+                onConfirm={setDate} 
+                 onCancel={hiddPopUp} />
                 
             </Popup>
           </span>
