@@ -13,30 +13,30 @@ export const ItemCreate = defineComponent(
             refKind.value = name;
         }    
         return ()=>
-                <>
-                <MainLayout>
-                      {{title:()=>'记一笔',
-                        icon: ()=><Icon src={left} class={s.navIcon} />,
-                        default:()=>(
-                            <>
-                            <Tabs selected={refKind.value}  onUpdateSelected={onUpdateSelected}>
-                                <Tab name="支出">
-                                    {"Icon列表"}
-                                </Tab>
-                                <Tab name="收入">
-                                    {"Icon列表2"}
+            <>
+            <MainLayout>
+            {{
+                title:()=>'记一笔',
+                icon: ()=><Icon src={left} class={s.navIcon} />,
+                default:()=>(
+                    <>
+                        <Tabs selected={refKind.value}  onUpdateSelected={onUpdateSelected}>
+                            <Tab name="支出">
+                                {"Icon列表"}
+                            </Tab>
+                            <Tab name="收入">
+                                {"Icon列表2"}
 
-                                </Tab>
-                            </Tabs>
-                            <div class={s.inputPad_wrapper}>
-                            <InputPad />
-                            </div>
-                            </>
-                        )
-                    }}
-                    
-                </MainLayout>
-                </>
+                            </Tab>
+                        </Tabs>
+                        <div class={s.inputPad_wrapper}>
+                        <InputPad />
+                        </div>
+                    </>
+                )  
+            }}
+            </MainLayout>
+            </>
         }
     }
 )
