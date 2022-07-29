@@ -8,15 +8,35 @@ import 'vant/lib/index.css';
 export const InputPad = defineComponent(
   {
   setup(props, context){
-   const now = new Date()
-    const refDate = ref<Date>(now);
+      const now = new Date()
+      const refDate = ref<Date>(now);
       const refShowPop = ref(false);
       const hiddPopUp=()=>{refShowPop.value = false};
       const setDate =(date:Date)=>{refDate.value = date; hiddPopUp();}
       const refAmount = ref("");
-      const appendText =(n: number | string)=>{refAmount.value += n.toString()}
+      const appendText =(n: number | string)=>{
+        const nString = n.toString();
+        const dotIndex = refAmount.value.indexOf('.');
+        if(nString ==='.'){
+          if(dotIndex >=0){
+            return;
+          }
+        }else if(nString==='0'){
+          if(refAmount.value.indexOf(".")>=0){
+
+          }else{
+            if(refAmount.value.indexOf("0")>=0){
+              return;
+            }
+          }
+        }else{
+          if(refAmount.value==='0'){
+            refAmount.value ='';
+          }
+        }
+        refAmount.value += n.toString()}
     
-  const buttons=[
+      const buttons=[
       {text:'1', onclick:()=>{appendText(1)}},
       {text:'2', onclick:()=>{appendText(2)}},
       {text:'3', onclick:()=>{appendText(3)}},
@@ -28,7 +48,7 @@ export const InputPad = defineComponent(
       {text:'9', onclick:()=>{appendText(9)}},
       {text:'.', onclick:()=>{appendText('.')}},
       {text:'0', onclick:()=>{appendText(0)}},
-      {text:'删', onclick:()=>{}},
+      {text:'清空', onclick:()=>{refAmount.value='0'}},
       {text:'提交', onclick:()=>{}},
     ];
    
