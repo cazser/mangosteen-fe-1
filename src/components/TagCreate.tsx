@@ -22,11 +22,12 @@ export const TagCreate = defineComponent(
                return(
                 
                    <form class={s.form}>
+                    |{formData.name}|
             <div class={s.formRow}>
               <label class={s.formLabel}>
                 <span class={s.formItem_name}>标签名</span>
                 <div class={s.formItem_value}>
-                  <input class={[s.formItem, s.input, s.error]}></input>
+                  <input v-model ={formData.name} class={[s.formItem, s.input, s.error]}></input>
                 </div>
                 <div class={s.formItem_errorHint}>
                   <span>必填</span>
