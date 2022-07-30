@@ -1,5 +1,5 @@
 import { Icon } from "../shared/Icon";
-import { defineComponent, ref } from "vue";
+import { defineComponent, reactive, ref } from "vue";
 import { MainLayout } from "../layout/MainLayout";
 import left from '../assets/icons/left.svg';
 import s from './TagCreate.module.scss';
@@ -7,7 +7,11 @@ import { Button } from "../shared/Button";
 export const TagCreate = defineComponent(
   {
   setup(){
-      return ()=>
+    const formData = reactive({
+      name:'',
+      sign:''
+    })  
+    return ()=>
         <>
         <MainLayout>
           {{

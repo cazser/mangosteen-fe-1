@@ -9,10 +9,12 @@
   margin-top: 8px;
 }
 .formLabel {
+  
 }
 .formItem {
   min-height: var(--input-min-height);
   max-width: 100%;
+  
   &.input {
     flex-grow: 1;
     border: 1px solid var(--input-border-color);
@@ -21,7 +23,10 @@
     font-family: inherit;
     padding-left: 16px;
     padding-right: 16px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     box-shadow: inset 0 0 3px var(--input-shadow);
+    
     &.error {
       border-color: var(--error-color);
     }
