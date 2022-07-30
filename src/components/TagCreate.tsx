@@ -4,6 +4,7 @@ import { MainLayout } from "../layout/MainLayout";
 import left from '../assets/icons/left.svg';
 import s from './TagCreate.module.scss';
 import { Button } from "../shared/Button";
+import { EmojiSelect } from "../shared/EmojiSelect";
 export const TagCreate = defineComponent(
   {
   setup(){
@@ -22,7 +23,7 @@ export const TagCreate = defineComponent(
                return(
                 
                    <form class={s.form}>
-                    |{formData.name}|
+                
             <div class={s.formRow}>
               <label class={s.formLabel}>
                 <span class={s.formItem_name}>标签名</span>
@@ -38,158 +39,9 @@ export const TagCreate = defineComponent(
               <label class={s.formLabel}>
                 <span class={s.formItem_name}>符号</span>
                 <div class={s.formItem_value}>
-                  <div class={[s.formItem, s.emojiList, s.error]}>
-                    <nav>
-                      <span class={s.selected}>表情</span>
-                      <span>手势</span>
-                      <span>职业</span>
-                      <span>衣服</span>
-                      <span>动物</span>
-                      <span>自然</span>
-                      <span>食物</span>
-                      <span>运动</span>
-                      <span>表情</span>
-                      <span>手势</span>
-                      <span>职业</span>
-                      <span>衣服</span>
-                      <span>动物</span>
-                      <span>自然</span>
-                      <span>食物</span>
-                      <span>运动</span>
-                    </nav>
-                    <ol>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                    </ol>
-                  </div>
+                  <EmojiSelect class={[s.formItem, s.emojiList, s.error]}>
+                   
+                  </EmojiSelect>
                 </div>
                 <div class={s.formItem_errorHint}>
                   <span>必填</span>
