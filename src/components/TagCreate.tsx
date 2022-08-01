@@ -5,6 +5,7 @@ import left from '../assets/icons/left.svg';
 import s from './TagCreate.module.scss';
 import { Button } from "../shared/Button";
 import { EmojiSelect } from "../shared/EmojiSelect";
+
 export const TagCreate = defineComponent(
   {
   setup(){
