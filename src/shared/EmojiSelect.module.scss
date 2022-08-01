@@ -43,5 +43,9 @@
       width: 10%;
       text-align: center;
     }
+      &.selectedEmoji{
+        outline: 1px solid var(--button-bg);
+        border-radius: var(--input-radius);
+      }
   }
 } 
