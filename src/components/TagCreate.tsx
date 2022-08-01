@@ -5,7 +5,7 @@ import left from '../assets/icons/left.svg';
 import s from './TagCreate.module.scss';
 import { Button } from "../shared/Button";
 import { EmojiSelect } from "../shared/EmojiSelect";
-import { validate } from "../shared/validate";
+import { Rules, validate } from "../shared/validate";
 
 export const TagCreate = defineComponent(
   {
@@ -14,14 +14,20 @@ export const TagCreate = defineComponent(
       name:'',
       sign:'x'
     })  
+    type XData={
+      name: string,
+      sign: string
+    }
+    const errors = reactive<{[k in keyof typeof formData]?: string[]}>({});
     const onSubmit= (e: Event)=>{
       console.log(toRaw(formData))
-      const rules =[
-        {key:'name', required: true, message: "必填"},
-        {key:'name', pattern: /^.{1,4}$/, message:"1到4个字"},
-        {key: 'sign', required: true}
+      const rules: Rules<typeof formData>=[
+        {key:'name', type:'required' , message: "必填"},
+        {key:'name', type:'pattern', regex: /^.{1,4}$/, message:"1到4个字"},
+        {key: 'sign', type:"required", message:"" }
       ]
-      const errors = validate(toRaw(formData), rules);
+      Object.assign(errors, {name: undefined, sign: undefined})
+      Object.assign(errors, validate(toRaw(formData),rules) );
       e.preventDefault();
     }
     return ()=>
@@ -43,7 +49,7 @@ export const TagCreate = defineComponent(
                   <input v-model ={formData.name} class={[s.formItem, s.input, s.error]}></input>
                 </div>
                 <div class={s.formItem_errorHint}>
-                  <span>必填</span>
+                  <span>{errors['name']?.[0]}</span>
                 </div>
               </label>
             </div>
@@ -56,7 +62,7 @@ export const TagCreate = defineComponent(
                   </EmojiSelect>
                 </div>
                 <div class={s.formItem_errorHint}>
-                  <span>必填</span>
+                  <span>{errors['sign']?.[0]}</span>
                 </div>
               </label>
             </div>

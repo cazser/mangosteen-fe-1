@@ -5,10 +5,11 @@ interface FData{
 type Rule<T>={
   key: keyof T
   message: string
-  required: boolean
 }&({type:"required"} | {type:"pattern", regex: RegExp})
 
 type Rules<T> = Rule<T>[];
+
+export type {Rules, Rule, FData}
 export const validate= <T extends FData>(formDate: T, rules: Rules<T>)=>{
 
   type Errors={
@@ -34,5 +35,5 @@ export const validate= <T extends FData>(formDate: T, rules: Rules<T>)=>{
       return;
     }
   })
-
+return errors;
 }
