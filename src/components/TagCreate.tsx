@@ -5,6 +5,7 @@ import left from '../assets/icons/left.svg';
 import s from './TagCreate.module.scss';
 import { Button } from "../shared/Button";
 import { EmojiSelect } from "../shared/EmojiSelect";
+import { validate } from "../shared/validate";
 
 export const TagCreate = defineComponent(
   {
@@ -13,7 +14,7 @@ export const TagCreate = defineComponent(
       name:'',
       sign:'x'
     })  
-    const onSubmit= (e: SubmitEvent)=>{
+    const onSubmit= (e: Event)=>{
       console.log(toRaw(formData))
       const rules =[
         {key:'name', required: true, message: "必填"},
