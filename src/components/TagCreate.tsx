@@ -1,5 +1,5 @@
 import { Icon } from "../shared/Icon";
-import { defineComponent, reactive, ref } from "vue";
+import { defineComponent, reactive, ref, toRaw } from "vue";
 import { MainLayout } from "../layout/MainLayout";
 import left from '../assets/icons/left.svg';
 import s from './TagCreate.module.scss';
@@ -13,6 +13,16 @@ export const TagCreate = defineComponent(
       name:'',
       sign:'x'
     })  
+    const onSubmit= (e: SubmitEvent)=>{
+      console.log(toRaw(formData))
+      const rules =[
+        {key:'name', required: true, message: "必填"},
+        {key:'name', pattern: /^.{1,4}$/, message:"1到4个字"},
+        {key: 'sign', required: true}
+      ]
+      const errors = validate(toRaw(formData), rules);
+      e.preventDefault();
+    }
     return ()=>
         <>
         <MainLayout>
@@ -23,7 +33,7 @@ export const TagCreate = defineComponent(
               ()=>{
                return(
                 
-                   <form class={s.form}>
+                   <form class={s.form} onSubmit={onSubmit}>
                 
             <div class={s.formRow}>
               <label class={s.formLabel}>
@@ -38,7 +48,7 @@ export const TagCreate = defineComponent(
             </div>
             <div class={s.formRow}>
               <label class={s.formLabel}>
-                <span class={s.formItem_name}>符号{formData.sign}</span>
+                <span class={s.formItem_name}>符号</span>
                 <div class={s.formItem_value}>
                   <EmojiSelect v-model={formData.sign} class={[s.formItem, s.emojiList, s.error]}>
                    
