@@ -51,16 +51,16 @@ export const ItemCreate = defineComponent(
 
         ]);    
         return ()=>
-            <>
-            <MainLayout>
+            <MainLayout class={s.layout}>
             {{
                 title:()=>'记一笔',
                 icon: ()=><Icon src={left} class={s.navIcon} onClick={()=>{}} />,
                 default:()=>(
-                    <>
-                        <Tabs selected={refKind.value}  onUpdateSelected={onUpdateSelected}>
-                            <Tab name="支出">
-                                 <div class={s.tag}>
+                    <div class={s.wrapper}>
+                        <Tabs selected={refKind.value}  onUpdateSelected={onUpdateSelected}
+                             class={s.tabs}>
+                            <Tab name="支出" class={s.tags_wrapper}>
+                            <div class={s.tag}>
                                 <div class={s.sign}>
                                   <Icon src={add} class={s.createTag} />
                                 </div>
@@ -69,16 +69,38 @@ export const ItemCreate = defineComponent(
                             </div>
                             </div>
                                 {refExpenceTags.value.map((tag)=>{
-                                    return (<div>
+                                    return (
+                                        <div class={[s.tag, s.selected]}>
+                                        <div class={s.sign}>
+                                        {tag.sign}
+                                        </div>
+                                        <div class={s.name}>
                                             {tag.name}
-                                        </div>)})}
+                                        </div>
+                                        </div>
+                                    )})}
                             </Tab>
-                            <Tab name="收入">
+                            <Tab name="收入" class={s.tags_wrapper}>
+                                <div class={s.tag}>
+                                <div class={s.sign}>
+                                  <Icon src={add} class={s.createTag} />
+                                </div>
+                                <div class={s.name}>
+                                    新增
+                                </div>
+                                </div>
                                 {refIncomeTags.value.map(
                                     (tag)=>{
                                      
                                      return(
-                                        <div>{tag.name}</div>
+                                        <div class={[s.tag, s.selected]}>
+                                        <div class={s.sign}>
+                                        {tag.sign}
+                                        </div>
+                                        <div class={s.name}>
+                                            {tag.name}
+                                        </div>
+                                        </div>
                                      )
                                     }
                                 )}
@@ -87,11 +109,10 @@ export const ItemCreate = defineComponent(
                         <div class={s.inputPad_wrapper}>
                         <InputPad />
                         </div>
-                    </>
+                    </div>
                 )  
             }}
             </MainLayout>
-            </>
         }
     }
 )
