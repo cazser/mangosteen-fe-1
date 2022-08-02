@@ -6,6 +6,7 @@ import { Icon } from "../../shared/Icon";
 import { Tab, Tabs } from "../../shared/Tabs";
 import { InputPad } from "./InputPad";
 import add from '../../assets/icons/add.svg'
+import { RouterLink } from "vue-router";
 export const ItemCreate = defineComponent(
     {
     setup(){
@@ -72,9 +73,11 @@ export const ItemCreate = defineComponent(
                             <Tab name="支出" >
                                 <div class={s.tags_wrapper}>
                             <div class={s.tag}>
+                                <RouterLink to="/tags/create">
                                 <div class={s.sign}>
                                   <Icon src={add} class={s.createTag} />
                                 </div>
+                                </RouterLink>
                             <div class={s.name}>
                               新增
                             </div>
@@ -95,9 +98,11 @@ export const ItemCreate = defineComponent(
                             <Tab name="收入">
                                 <div class={s.tags_wrapper}>
                                 <div class={s.tag}>
-                                <div class={s.sign}>
-                                  <Icon src={add} class={s.createTag} />
-                                </div>
+                                 <RouterLink to="/tags/create">    
+                                    <div class={s.sign}>
+                                        <Icon src={add} class={s.createTag} />
+                                    </div>
+                                </RouterLink>
                                 <div class={s.name}>
                                     新增
                                 </div>
