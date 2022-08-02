@@ -49,7 +49,8 @@ export const ItemCreate = defineComponent(
 
 
 
-        ]);    
+        ]); 
+        console.log(s.tags_wrapper)   
         return ()=>
             <MainLayout class={s.layout}>
             {{
@@ -59,7 +60,8 @@ export const ItemCreate = defineComponent(
                     <div class={s.wrapper}>
                         <Tabs selected={refKind.value}  onUpdateSelected={onUpdateSelected}
                              class={s.tabs}>
-                            <Tab name="支出" class={s.tags_wrapper}>
+                            <Tab name="支出" >
+                                <div class={s.tags_wrapper}>
                             <div class={s.tag}>
                                 <div class={s.sign}>
                                   <Icon src={add} class={s.createTag} />
@@ -79,8 +81,10 @@ export const ItemCreate = defineComponent(
                                         </div>
                                         </div>
                                     )})}
+                                </div>
                             </Tab>
-                            <Tab name="收入" class={s.tags_wrapper}>
+                            <Tab name="收入">
+                                <div class={s.tags_wrapper}>
                                 <div class={s.tag}>
                                 <div class={s.sign}>
                                   <Icon src={add} class={s.createTag} />
@@ -104,6 +108,7 @@ export const ItemCreate = defineComponent(
                                      )
                                     }
                                 )}
+                                </div>
                             </Tab>
                         </Tabs>
                         <div class={s.inputPad_wrapper}>
