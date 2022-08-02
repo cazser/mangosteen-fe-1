@@ -44,6 +44,15 @@ export const ItemCreate = defineComponent(
              {id:"1", name:"产出", sign:"￥", category:"expences"},
              {id:"1", name:"产出", sign:"￥", category:"expences"},
              {id:"1", name:"产出", sign:"￥", category:"expences"},
+              {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
             
 
 

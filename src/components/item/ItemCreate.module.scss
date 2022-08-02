@@ -25,7 +25,8 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: 16px;
-  
+ height: calc(100vh - 400px);
+ overflow: auto; 
 }
 .createTag {
   fill: var(--main);
