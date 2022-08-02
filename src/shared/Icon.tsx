@@ -1,7 +1,7 @@
 import { defineComponent, ref } from "vue";
 interface Props{
     src: string,
-    onClick: Function
+    onClick?: Function
 }
 export const Icon = defineComponent<Props>(
     {

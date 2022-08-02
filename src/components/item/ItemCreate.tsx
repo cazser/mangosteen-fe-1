@@ -5,6 +5,7 @@ import left from '../../assets/icons/left.svg'
 import { Icon } from "../../shared/Icon";
 import { Tab, Tabs } from "../../shared/Tabs";
 import { InputPad } from "./InputPad";
+import add from '../../assets/icons/add.svg'
 export const ItemCreate = defineComponent(
     {
     setup(){
@@ -22,7 +23,32 @@ export const ItemCreate = defineComponent(
              {id:"1", name:"产出", sign:"￥", category:"expences"},
              {id:"1", name:"产出", sign:"￥", category:"expences"},
              {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+            {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
+             {id:"1", name:"产出", sign:"￥", category:"expences"},
             
+
+
+
+
         ]);    
         return ()=>
             <>
@@ -34,18 +60,25 @@ export const ItemCreate = defineComponent(
                     <>
                         <Tabs selected={refKind.value}  onUpdateSelected={onUpdateSelected}>
                             <Tab name="支出">
-                                <span>1</span>
+                                 <div class={s.tag}>
+                                <div class={s.sign}>
+                                  <Icon src={add} class={s.createTag} />
+                                </div>
+                            <div class={s.name}>
+                              新增
+                            </div>
+                            </div>
                                 {refExpenceTags.value.map((tag)=>{
-                                    return (<span>
+                                    return (<div>
                                             {tag.name}
-                                        </span>)})}
+                                        </div>)})}
                             </Tab>
                             <Tab name="收入">
                                 {refIncomeTags.value.map(
                                     (tag)=>{
                                      
                                      return(
-                                        <span>{tag.name}</span>
+                                        <div>{tag.name}</div>
                                      )
                                     }
                                 )}
