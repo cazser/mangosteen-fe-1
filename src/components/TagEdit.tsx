@@ -2,7 +2,7 @@ import { Icon } from "../shared/Icon";
 import { defineComponent, reactive, ref, toRaw } from "vue";
 import { MainLayout } from "../layout/MainLayout";
 import left from '../assets/icons/left.svg';
-import s from './TagEdit.module.scss';
+import s from './Tag.module.scss';
 import { Button } from "../shared/Button";
 import { EmojiSelect } from "../shared/EmojiSelect";
 import { Rules, validate } from "../shared/validate";
