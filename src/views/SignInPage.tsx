@@ -19,7 +19,7 @@ export const SignInPage = defineComponent(
               <div class={s.wrapper}>
                 <Form>
                   <FormItem label="邮箱地址" type="text"/>
-                  <FormItem label="验证码" type="text"/>
+                  <FormItem label="验证码" type='validationCode'/>
                   <FormItem>
                     <Button>登录</Button>
                   </FormItem>

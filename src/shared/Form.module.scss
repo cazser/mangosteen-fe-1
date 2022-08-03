@@ -7,12 +7,25 @@
 .formLabel {
   display: block;
 }
+.validationCodeButton{
+    margin-right: 16px;
+    flex-grow: 1;
+}
 .formItem {
   min-height: var(--input-min-height);
   max-width: 100%;
+  
   &.button {
     width: 100%;
   }
+&.halfbutton{
+  width: 10em;
+  margin-left: 32px;
+}
+  &.validationCodeInput{
+      width: 8em;
+      flex-grow: 1;
+    }
   &.input {
     flex-grow: 1;
     border: 1px solid var(--input-border-color);
@@ -25,6 +38,8 @@
     &.error {
       border-color: var(--error-color);
     }
+    
+  
   }
 
   &_name {
