@@ -1,10 +1,11 @@
-import { defineComponent, ref } from "vue";
+import { defineComponent, reactive, ref } from "vue";
 import { MainLayout } from "../../layout/MainLayout";
 import { Icon } from "../../shared/Icon";
 import s from './ItemList.moudle.scss'
 import menu from '../../assets/icons/menu.svg'
 import { Tab, Tabs } from "../../shared/Tabs";
 import { ItemSummary } from "./ItemSummary";
+import { Time } from "../../shared/time";
 
 export const ItemList = defineComponent(
     {
@@ -13,6 +14,13 @@ export const ItemList = defineComponent(
       const onUpdateSelected=(name: string)=>{
             refKind.value = name;
         }
+      const time = new Time();
+      const customTime= reactive({start: new Time(), end: new Time()});
+      const timeList =[
+        {start: time.firstDayOfMonth(), end: time.lastDayOfMonth()},
+        {start: time.add(-1, 'month').firstDayOfMonth(), end: time.add(-1, 'month').lastDayOfMonth()},
+        {start: time.firstDayOfYear(), end:time.lastDayOfYear()}
+      ]
             return ()=>
                 <>
                 <MainLayout>
@@ -25,16 +33,16 @@ export const ItemList = defineComponent(
                             <Tabs v-model:selected={refKind.value}
                             onUpdateSelected={onUpdateSelected}>
                             <Tab name="本月" >
-                              <ItemSummary/>
+                              <ItemSummary startDate={timeList[0].start.format()} endDate={timeList[0].end.format()} />
                             </Tab>
                             <Tab name="上月" >
-                              <ItemSummary />
+                              <ItemSummary startDate={timeList[1].start.format()} endDate={timeList[1].end.format()}/>
                             </Tab>
                              <Tab name="今年" >
-                              <ItemSummary />
+                              <ItemSummary startDate={timeList[2].start.format()} endDate={timeList[2].end.format()}/>
                             </Tab>
                             <Tab name="自定义" >
-                              <ItemSummary />
+                              <ItemSummary  startDate={customTime.start.format()}  endDate={customTime.end.format()}/>
                             </Tab>
                             
                             </Tabs>

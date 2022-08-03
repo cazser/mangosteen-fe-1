@@ -1,4 +1,5 @@
 import { defineComponent, ref } from "vue";
+import { Time } from "../../shared/time";
 export const ItemSummary = defineComponent(
   {
     props:{
@@ -7,7 +8,7 @@ export const ItemSummary = defineComponent(
         required: true
       },
       endDate:{
-        type: String,
+      type: String,
         required: true
       }
     },
