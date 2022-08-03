@@ -4,6 +4,7 @@ import chart from '../assets/icons/chart.svg'
 import notice from '../assets/icons/notice.svg';
 import exports from '../assets/icons/export.svg'
 import s from './Overlay.module.scss'
+import { RouterLink } from "vue-router";
 export const Overlay = defineComponent(
     {
         props:{
@@ -24,7 +25,9 @@ export const Overlay = defineComponent(
                 <div class={s.overlay}>
                     <section class={s.currentUser} onClick={onClickSignIn}>
                         <h2>未登录用户</h2>
-                        <div>点击这里登录</div>
+                        <RouterLink to="/sign_in">
+                            <div>点击这里登录</div>
+                        </RouterLink>
                     </section>
                     
                     <nav>
