@@ -4,6 +4,7 @@ import { Icon } from "../../shared/Icon";
 import s from './ItemList.moudle.scss'
 import menu from '../../assets/icons/menu.svg'
 import { Tab, Tabs } from "../../shared/Tabs";
+import { ItemSummary } from "./ItemSummary";
 
 export const ItemList = defineComponent(
     {
@@ -24,16 +25,16 @@ export const ItemList = defineComponent(
                             <Tabs v-model:selected={refKind.value}
                             onUpdateSelected={onUpdateSelected}>
                             <Tab name="本月" >
-                              list1
+                              <ItemSummary/>
                             </Tab>
                             <Tab name="上月" >
-                              list2
+                              <ItemSummary />
                             </Tab>
                              <Tab name="今年" >
-                              list3
+                              <ItemSummary />
                             </Tab>
                             <Tab name="自定义" >
-                              list4
+                              <ItemSummary />
                             </Tab>
                             
                             </Tabs>

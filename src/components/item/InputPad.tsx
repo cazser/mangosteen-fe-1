@@ -1,7 +1,7 @@
 import { defineComponent, ref } from "vue";
 import s from './InputPad.module.scss'
 import { Icon } from "../../shared/Icon";
-import { time } from "../../shared/time";
+import { Time } from "../../shared/time";
 import { Button } from 'vant';
 import { DatetimePicker, Popup } from 'vant';
 import 'vant/lib/index.css';
@@ -57,7 +57,7 @@ export const InputPad = defineComponent(
         <div class={[s.wrapper, s.dateAndAmount] }>
           <span class={s.date}>
              <span>
-             <span onClick={() => refShowPop.value = true}>{time(refDate.value).format()}</span>
+             <span onClick={() => refShowPop.value = true}>{new Time(refDate.value).format()}</span>
             <Popup position='bottom' v-model:show={refShowPop.value}>
               <DatetimePicker value={refDate.value} type="date" title="选择年月日"
                 onConfirm={setDate} 
