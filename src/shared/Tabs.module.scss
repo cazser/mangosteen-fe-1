@@ -1,4 +1,5 @@
 .tabs{
+  min-height: calc(100vh - 100px);
   &_nav{
     display:  flex;
     justify-content: space-between;
