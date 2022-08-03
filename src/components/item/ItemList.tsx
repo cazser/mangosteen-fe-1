@@ -8,7 +8,10 @@ import { Tab, Tabs } from "../../shared/Tabs";
 export const ItemList = defineComponent(
     {
     setup(){
-      const refKind= ref(0);
+      const refKind= ref("本月");
+      const onUpdateSelected=(name: string)=>{
+            refKind.value = name;
+        }
             return ()=>
                 <>
                 <MainLayout>
@@ -17,24 +20,24 @@ export const ItemList = defineComponent(
                     icon: ()=><Icon src={menu}/>,
                     default: ()=>{
                         return (
-                          <div class={s.bigfix}>
+                        
                             <Tabs v-model:selected={refKind.value}
-                             >
+                            onUpdateSelected={onUpdateSelected}>
                             <Tab name="本月" >
                               list1
                             </Tab>
                             <Tab name="上月" >
-                              list1
+                              list2
                             </Tab>
                              <Tab name="今年" >
-                              list1
+                              list3
                             </Tab>
                             <Tab name="自定义" >
-                              list1
+                              list4
                             </Tab>
                             
                             </Tabs>
-                          </div>
+                          
                         )
                     }
                   }
