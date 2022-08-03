@@ -42,7 +42,7 @@ export const ItemList = defineComponent(
                           <>
                             <Tabs v-model:selected={refKind.value}
                             onUpdateSelected={onUpdateSelected}
-                            onUpdate:selected={()=>refOverlayVisible.value = true}>
+                            >
                             <Tab name="本月" >
                               <ItemSummary startDate={timeList[0].start.format()} endDate={timeList[0].end.format()} />
                             </Tab>
