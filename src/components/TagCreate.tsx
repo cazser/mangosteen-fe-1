@@ -4,8 +4,8 @@ import { MainLayout } from "../layout/MainLayout";
 import left from '../assets/icons/left.svg';
 import s from './Tag.module.scss';
 import { Button } from "../shared/Button";
-import { EmojiSelect } from "../shared/EmojiSelect";
 import { Rules, validate } from "../shared/validate";
+import { TagForm } from "./TagForm";
 
 export const TagCreate = defineComponent(
   {
@@ -39,42 +39,7 @@ export const TagCreate = defineComponent(
             default:
               ()=>{
                return(
-                
-                   <form class={s.form} onSubmit={onSubmit}>
-                
-            <div class={s.formRow}>
-              <label class={s.formLabel}>
-                <span class={s.formItem_name}>标签名</span>
-                <div class={s.formItem_value}>
-                  <input v-model ={formData.name} class={[s.formItem, s.input, s.error]}></input>
-                </div>
-                <div class={s.formItem_errorHint}>
-                  <span>{errors['name']?.[0]}</span>
-                </div>
-              </label>
-            </div>
-            <div class={s.formRow}>
-              <label class={s.formLabel}>
-                <span class={s.formItem_name}>符号{formData.sign}</span>
-                <div class={s.formItem_value}>
-                  <EmojiSelect v-model={formData.sign} class={[s.formItem, s.emojiList, s.error]}>
-                   
-                  </EmojiSelect>
-                </div>
-                <div class={s.formItem_errorHint}>
-                  <span>{errors['sign']?.[0]}</span>
-                </div>
-              </label>
-            </div>
-             <p class={s.tips}>记账时长按标签即可进行编辑</p>
-            <div class={s.formRow}>
-              <div class={s.formItem_value}>
-                <Button class={[s.formItem, s.button]}>确定</Button>
-              </div>
-            </div>
-          </form>
-
-                
+                <TagForm/>                
                ) 
               }
           }}

@@ -1,5 +1,6 @@
 import { defineComponent, PropType, ref } from "vue";
 import { Navbar } from "../components/Navbar";
+import s from './MainLayout.module.scss';
 export const MainLayout = defineComponent(
     {
         props:{
@@ -9,9 +10,9 @@ export const MainLayout = defineComponent(
         }, 
     setup(props, context){
             return ()=>
-                <div>
+                <div class={s.wrapper}>
                
-                <Navbar onClick={props.onNavBarClick}>
+                <Navbar class={s.navbar} onClick={props.onNavBarClick}>
                     
                     {{default: context.slots.title?.(), icon: context.slots.icon?.()}}
                 </Navbar>
