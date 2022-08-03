@@ -6,6 +6,7 @@ import s from './SignInPage.module.scss'
 import { Form, FormItem } from "../shared/Form";
 import { Button } from "../shared/Button";
 import { validate } from "../shared/validate";
+import mangosteen from '../assets/icons/mangosteen.svg'
 export const SignInPage = defineComponent(
   {
   setup(){
@@ -30,13 +31,20 @@ export const SignInPage = defineComponent(
             default:
               ()=><>
               <div class={s.wrapper}>
+                <div class={s.title}>
+                <img src={mangosteen}/>
+                <p>山竹记账</p>
+                </div>
                 <Form onSubmit={onSubmit}>
                   <FormItem label="邮箱地址" type="text" 
-                  v-model={formData.email} error={errors.email?.[0] ?? ' '}/>
-                  <FormItem label="验证码" type='validationCode'
+                  v-model={formData.email} error={errors.email?.[0] ?? ' '}
+                  placeholder="请输入邮箱，然后点击发送验证码"/>
+                  <FormItem label="验证码" type='validationCode' placeholder="6位数字"
                   v-model={formData.code} error={errors.code?.[0] ?? ' '}/>
                   <FormItem>
+                    <div class={s.footer}>
                     <Button>登录</Button>
+                    </div>
                   </FormItem>
                 </Form>
               </div>

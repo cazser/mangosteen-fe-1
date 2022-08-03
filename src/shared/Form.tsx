@@ -32,6 +32,10 @@ export const FormItem = defineComponent({
     },
     error: {
       type: String
+    },
+    placeholder:{
+      type: String,
+      default:""
     }
   },
   setup: (props, context) => {
@@ -42,14 +46,16 @@ export const FormItem = defineComponent({
           return <input
             value={props.modelValue}
             onInput={(e: any) => context.emit('update:modelValue', e.target.value)}
-            class={[s.formItem, s.input,]} />
+            class={[s.formItem, s.input,]} 
+            placeholder={props.placeholder}/>
         case 'validationCode':
             return <div>
                   <input
                     value={props.modelValue}
                     onInput={(e: any) => context.emit('update:modelValue', e.target.value)}
-                    class={[s.formItem, s.input, s.validationCodeInput]} />
-                    <Button class={[s.formItem, s.halfbutton]}>提交</Button>
+                    class={[s.formItem, s.input, s.validationCodeInput]} 
+                    placeholder={props.placeholder} />
+                    <Button class={[s.formItem, s.halfbutton]}>发送</Button>
                   </div>
         case 'date':
           return <>
