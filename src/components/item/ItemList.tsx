@@ -17,6 +17,7 @@ export const ItemList = defineComponent(
         }
       const refOverlayVisible = ref(false)
       watchEffect(() => {
+
       if (refKind.value === '自定义时间') {
         refOverlayVisible.value = true
       }
@@ -48,7 +49,7 @@ export const ItemList = defineComponent(
                              <Tab name="今年" >
                               <ItemSummary startDate={timeList[2].start.format()} endDate={timeList[2].end.format()}/>
                             </Tab>
-                            <Tab name="自定义" >
+                            <Tab name="自定义时间" >
                               <ItemSummary  startDate={customTime.start.format()}  endDate={customTime.end.format()}/>
                             </Tab>
                             
@@ -61,7 +62,7 @@ export const ItemList = defineComponent(
                 <main>
                   <form>
                     <div>
-
+                          
                     </div>
                     <div>
 
