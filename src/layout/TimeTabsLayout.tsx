@@ -2,27 +2,18 @@ import { Component, DefineComponent, defineComponent, PropType, reactive, ref, w
 import { Icon } from "../shared/Icon";
 import { Time } from "../shared/time";
 import { MainLayout } from "./MainLayout";
-import menu from '../assets/icons/menu.svg';
+import left from '../assets/icons/left.svg';
 import { Tab, Tabs } from "../shared/Tabs";
 import { ItemSummary } from "../components/item/ItemSummary";
 import { Overlay } from "vant";
 import { Form, FormItem } from "../shared/Form";
 import s from './TimeTabsLayout.module.scss'
+import { RouterLink } from "vue-router";
 export const TimeTabsLayout = defineComponent(
   {
     props:{
       component:{
-        type: Object as PropType<DefineComponent<{
-          startDate:{
-            type: String,
-            required: true
-          },
-          endDate:{
-             type: String,
-            required: true
-          }
-
-        }>>,
+        type: Object as PropType<DefineComponent<typeof ItemSummary>>,
         required: true
         
     }
@@ -55,7 +46,11 @@ export const TimeTabsLayout = defineComponent(
                 <MainLayout>
                   {
                   { title:()=>'山竹记账',
-                    icon: ()=><Icon src={menu}/>,
+
+                    icon: ()=>
+                    (<RouterLink to='/start'>
+                      <Icon src={left}/>
+                    </RouterLink>) ,
                     default: ()=>{
                         return (
                           <>
