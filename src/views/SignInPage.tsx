@@ -7,6 +7,7 @@ import { Form, FormItem } from "../shared/Form";
 import { Button } from "../shared/Button";
 import { validate } from "../shared/validate";
 import mangosteen from '../assets/icons/mangosteen.svg'
+import { RouterLink } from "vue-router";
 export const SignInPage = defineComponent(
   {
   setup(){
@@ -27,7 +28,11 @@ export const SignInPage = defineComponent(
         <MainLayout>
           {{
             title: ()=>"登录",
-            icon: ()=><Icon src={left}/>,
+            icon: ()=>(
+              <RouterLink to="/start">
+                <Icon src={left}/>
+              </RouterLink>
+              ),
             default:
               ()=><>
               <div class={s.wrapper}>

@@ -65,7 +65,10 @@ export const ItemCreate = defineComponent(
             <MainLayout class={s.layout}>
             {{
                 title:()=>'记一笔',
-                icon: ()=><Icon src={left} class={s.navIcon} onClick={()=>{}} />,
+                icon: ()=>(
+                            <RouterLink to="/start">
+                                <Icon src={left} class={s.navIcon} onClick={()=>{}} />
+                            </RouterLink>),
                 default:()=>(
                     <div class={s.wrapper}>
                         <Tabs selected={refKind.value}  onUpdateSelected={onUpdateSelected}
