@@ -3,7 +3,9 @@
 import { computed, defineComponent, onMounted, PropType, reactive, ref } from "vue";
 import { FormItem } from "../../shared/Form";
 import s from './Charts.module.scss'
-
+import * as exharts from 'echarts';
+import { LineChart } from "./LineChart";
+import { PieChart } from "./PreChart";
 export const Charts = defineComponent(
   {
  props: {
@@ -18,7 +20,7 @@ export const Charts = defineComponent(
   },
   setup(){
     const category = ref('expences')
-    const refDiv = ref<HTMLElement>();
+   
      const data3 = reactive([
       { tag: { id: 1, name: '房租', sign: 'x' }, amount: 3000 },
       { tag: { id: 2, name: '吃饭', sign: 'x' }, amount: 1000 },
@@ -31,33 +33,7 @@ export const Charts = defineComponent(
         percent: Math.round(item.amount / total * 100) + '%'
       }))
     })
-    onMounted(()=>{
-      if(refDiv.value === undefined) return;
-       var myChart = echarts.init(refDiv.value);
-
-      // 指定图表的配置项和数据
-      var option = {
-          xAxis: {
-            type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-          },
-          grid:{
-            right: 0, left:0, top:0
-          },
-          yAxis: {
-            type: 'value'
-          },
-          series: [
-            {
-              data: [150, 230, 224, 218, 135, 147, 260],
-              type: 'line'
-            }
-          ]
-        };
-
-      // 使用刚指定的配置项和数据显示图表。
-      myChart.setOption(option);
-    })
+    
     return ()=>
         <>
         <div class={s.wrapper}>
@@ -68,7 +44,8 @@ export const Charts = defineComponent(
           ]}
           v-model={category.value}
           />
-
+          <LineChart />
+          <PieChart />
           <div class={s.demo3}>
           {betterData3.value.map(({ tag, amount, percent }) => {
             return (
@@ -89,11 +66,10 @@ export const Charts = defineComponent(
             )
           })}
         </div>
-        
-        </div>
-        <div ref={refDiv} class={s.demo}>
 
         </div>
+       
+        
         
       </>
     }
