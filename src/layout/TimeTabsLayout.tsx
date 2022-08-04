@@ -9,11 +9,26 @@ import { Overlay } from "vant";
 import { Form, FormItem } from "../shared/Form";
 import s from './TimeTabsLayout.module.scss'
 import { RouterLink } from "vue-router";
+import { Charts } from "../components/statistics/Charts";
+const demo = defineComponent(
+  {
+   props: {
+    startDate: {
+      type: String as PropType<string>,
+      required: true
+    },
+    endDate: {
+      type: String as PropType<string>,
+      required: true
+    }
+  },
+}
+)
 export const TimeTabsLayout = defineComponent(
   {
     props:{
       component:{
-        type: Object as PropType<DefineComponent<typeof ItemSummary>>,
+        type: Object,
         required: true
         
     }
