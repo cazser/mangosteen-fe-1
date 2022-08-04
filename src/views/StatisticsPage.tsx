@@ -4,6 +4,7 @@ import { Icon } from "../shared/Icon";
 import left from '../assets/icons/left.svg'
 import { RouterLink } from "vue-router";
 import { Tab, Tabs } from "../shared/Tabs";
+import { Charts } from "../components/statistics/Charts";
 
 export const StatisticsPage = defineComponent(
   {
@@ -31,12 +32,16 @@ export const StatisticsPage = defineComponent(
                             onUpdateSelected={onUpdateSelected}
                             >
                             <Tab name="本月" >
+                              <Charts/>
                             </Tab>
                             <Tab name="上月" >
+                              <Charts />
                             </Tab>
                              <Tab name="今年" >
+                              <Charts />
                             </Tab>
                             <Tab name="自定义时间" >
+                              <Charts />
                             </Tab>
                             </Tabs>
                   )
